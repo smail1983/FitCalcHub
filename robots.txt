@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fitcalchub.com/sitemap.xml
+Sitemap: https://fitcalchub.top/sitemap.xml
