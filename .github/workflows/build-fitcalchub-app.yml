@@ -7,6 +7,9 @@ on:
       - 'flutter_app/**'
       - '.github/workflows/build-fitcalchub-app.yml'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +30,14 @@ jobs:
         run: |
           flutter pub get
           flutter build apk --release
+      - name: Publish APK to repository
+        run: |
+          cp flutter_app/build/app/outputs/flutter-apk/app-release.apk FitCalcHubApp.apk
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add FitCalcHubApp.apk
+          git commit -m "Build FitCalcHubApp APK" || echo "No APK changes"
+          git push
       - uses: actions/upload-artifact@v4
         with:
           name: FitCalcHubApp-release
