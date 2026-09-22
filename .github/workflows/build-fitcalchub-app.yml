@@ -1,0 +1,33 @@
+name: Build FitCalcHubApp APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'flutter_app/**'
+      - '.github/workflows/build-fitcalchub-app.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.0'
+          channel: stable
+      - name: Create Android project
+        working-directory: flutter_app
+        run: flutter create --platforms android --org com.fitcalchub .
+      - name: Set app name
+        working-directory: flutter_app
+        run: sed -i 's/android:label="[^"]*"/android:label="FitCalcHubApp"/' android/app/src/main/AndroidManifest.xml
+      - name: Build release APK
+        working-directory: flutter_app
+        run: |
+          flutter pub get
+          flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FitCalcHubApp-release
+          path: flutter_app/build/app/outputs/flutter-apk/app-release.apk
