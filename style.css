@@ -19,7 +19,7 @@ a{text-decoration:none;color:inherit}
 .nav-cta{background:var(--green);color:#fff;padding:11px 19px;border-radius:999px;font-weight:800;box-shadow:0 8px 22px rgba(8,169,87,.2)}
 .nav-cta:hover,.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}
 .hero{position:relative;min-height:735px;overflow:hidden;background:#dceff2}
-.hero-bg{position:absolute;inset:0;background-image:url("https://images.unsplash.com/photo-1694605491285-4f9278ac31a4?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=2200");background-size:cover;background-position:center right;transform:scale(1.02)}
+.hero-bg{position:absolute;inset:0;background-image:url("fitcalchub-hero.svg");background-size:cover;background-position:center right;transform:scale(1.02)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.93) 31%,rgba(255,255,255,.32) 53%,rgba(255,255,255,0) 73%),linear-gradient(0deg,rgba(5,20,18,.18),transparent 35%)}
 .hero-inner{position:relative;z-index:2;max-width:1240px;margin:auto;padding:72px 24px 56px;min-height:735px;display:flex;align-items:center}
 .hero-copy{max-width:610px}
