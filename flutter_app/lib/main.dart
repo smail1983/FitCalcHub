@@ -5,7 +5,8 @@ void main() => runApp(const FitCalcHubApp());
 const emerald = Color(0xFF10B981);
 const deepEmerald = Color(0xFF047857);
 const ink = Color(0xFF0F172A);
-const soft = Color(0xFFF3FAF7);
+const soft = Color(0xFFF4FBF8);
+const mint = Color(0xFFDDF7EC);
 
 class FitCalcHubApp extends StatelessWidget {
   const FitCalcHubApp({super.key});
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final pages = [const HomeTab(), const CalculatorsTab(), const ResultsTab(), const SettingsTab()];
     return Scaffold(
-      body: SafeArea(child: pages[tab]),
+      body: Container(decoration: const BoxDecoration(gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Color(0xFFE8FAF2), Color(0xFFF9FFFC), Color(0xFFF1FAF6)])), child: SafeArea(child: pages[tab])),
       bottomNavigationBar: NavigationBar(
         selectedIndex: tab,
         onDestinationSelected: (i) => setState(() => tab = i),
@@ -84,21 +85,21 @@ class HomeTab extends StatelessWidget {
     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const AppHeader(title: 'FitCalcHub', subtitle: 'Your everyday health toolkit'),
       Container(
-        height: 275,
+        height: 330,
         margin: const EdgeInsets.fromLTRB(20, 18, 20, 24),
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), boxShadow: const [
-          BoxShadow(color: Color(0x240F172A), blurRadius: 22, offset: Offset(0, 10))]),
+          BoxShadow(color: Color(0x20105B43), blurRadius: 24, offset: Offset(0, 12))]),
         child: Stack(fit: StackFit.expand, children: [
           Image.asset('assets/fitcalchub-hero.svg', fit: BoxFit.cover),
           DecoratedBox(decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight,
-              colors: [Colors.white.withOpacity(.92), Colors.white.withOpacity(.25), const Color(0xCC052E24)]))),
+              colors: [Colors.white.withOpacity(.72), Colors.white.withOpacity(.10), const Color(0x9927A879)]))),
           Padding(padding: const EdgeInsets.all(24), child: Column(
             crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.end, children: [
-              const Text('Build healthier habits', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900, color: ink)),
+              const Text('Better Every Day', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900, color: deepEmerald)),
               const SizedBox(height: 7),
-              const Text('Simple tools for calories, body composition and daily energy.', style: TextStyle(color: Color(0xFF334155), height: 1.4)),
+              const Text('Small steps. Big results.\nSimple tools for a healthier you.', style: TextStyle(color: Color(0xFF315B4A), height: 1.4)),
               const SizedBox(height: 16),
               FilledButton.icon(
                 onPressed: () {},
@@ -108,7 +109,7 @@ class HomeTab extends StatelessWidget {
             ])),
         ]),
       ),
-      const SectionTitle('Popular tools'),
+      const SectionTitle('Popular Calculators'),
       Padding(padding: const EdgeInsets.symmetric(horizontal: 20), child: Row(children: [
         Expanded(child: ToolCard(icon: Icons.monitor_weight_outlined, title: 'BMI', subtitle: 'Body mass index', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BmiPage())))),
         const SizedBox(width: 12),
@@ -121,7 +122,7 @@ class HomeTab extends StatelessWidget {
         Expanded(child: ToolCard(icon: Icons.restaurant_outlined, title: 'Calories', subtitle: 'Nutrition planning', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const CaloriesPage())))),
       ])),
       const SizedBox(height: 24),
-      const SectionTitle('Daily tip'),
+      const SectionTitle('Small Steps • Big Results'),
       Container(margin: const EdgeInsets.symmetric(horizontal: 20), padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24)),
         child: const Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
