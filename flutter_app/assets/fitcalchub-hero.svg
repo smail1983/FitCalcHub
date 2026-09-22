@@ -1,19 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 1100" width="2200" height="1100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
 <defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bfe5ee"/><stop offset=".58" stop-color="#dcefeb"/><stop offset="1" stop-color="#a8c9b5"/></linearGradient>
-  <linearGradient id="mountain" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#557c76"/><stop offset=".5" stop-color="#2e514b"/><stop offset="1" stop-color="#173934"/></linearGradient>
-  <linearGradient id="snow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbf8"/><stop offset="1" stop-color="#bcd7d1"/></linearGradient>
-  <linearGradient id="valley" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6c9b82"/><stop offset="1" stop-color="#244c3c"/></linearGradient>
-  <filter id="blur"><feGaussianBlur stdDeviation="22"/></filter><filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff8ef"/><stop offset=".55" stop-color="#f8fffc"/><stop offset="1" stop-color="#c9f0df"/></linearGradient>
+ <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8ffff"/><stop offset=".55" stop-color="#b9ead8"/><stop offset="1" stop-color="#69caa7"/></linearGradient>
+ <radialGradient id="apple"><stop stop-color="#ff9b82"/><stop offset="1" stop-color="#e85d4f"/></radialGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
 </defs>
-<rect width="2200" height="1100" fill="url(#sky)"/><circle cx="1750" cy="210" r="150" fill="#fff" opacity=".38" filter="url(#blur)"/>
-<path d="M0 760 L360 450 620 690 1010 240 1330 610 1690 320 2200 760 V1100 H0Z" fill="url(#mountain)"/>
-<path d="M690 590 L1010 240 1135 410 1065 390 1015 480 950 430 900 520 830 500Z" fill="url(#snow)" opacity=".95"/>
-<path d="M1470 540 L1690 320 1830 505 1765 475 1715 535 1665 495 1610 575Z" fill="url(#snow)" opacity=".82"/>
-<path d="M0 820 Q500 650 930 820 T1600 780 T2200 820 V1100 H0Z" fill="url(#valley)"/>
-<path d="M0 930 Q450 790 880 910 T1580 900 T2200 930 V1100 H0Z" fill="#193e32" opacity=".7"/>
-<g opacity=".42" filter="url(#soft)" fill="#eef8ef"><ellipse cx="450" cy="820" rx="180" ry="35"/><ellipse cx="1150" cy="760" rx="240" ry="42"/><ellipse cx="1840" cy="830" rx="220" ry="38"/></g>
-<g fill="#102f29" opacity=".82"><path d="M90 930 l35-120 35 120z"/><path d="M150 950 l48-170 48 170z"/><path d="M2020 950 l42-150 42 150z"/><path d="M2080 955 l55-190 55 190z"/></g>
-<rect width="2200" height="1100" fill="#ffffff" opacity=".06"/>
+<rect width="1200" height="700" rx="48" fill="url(#bg)"/>
+<circle cx="1020" cy="100" r="180" fill="#fff" opacity=".55"/>
+<circle cx="170" cy="590" r="170" fill="#b7ecd7" opacity=".45"/>
+<g opacity=".55" fill="#72c7a4"><path d="M90 170c90-110 180-80 180-80-45 115-130 140-180 80z"/><path d="M1000 570c70-100 150-100 150-100-5 105-80 145-150 100z"/><path d="M270 120c60-75 120-70 120-70-15 75-70 105-120 70z"/></g>
+<ellipse cx="810" cy="585" rx="250" ry="42" fill="#164e3b" opacity=".12" filter="url(#shadow)"/>
+<!-- bottle -->
+<g transform="translate(720 115) rotate(8)">
+ <rect x="92" y="0" width="78" height="42" rx="15" fill="#e8fff7" stroke="#59b995" stroke-width="8"/>
+ <rect x="55" y="32" width="150" height="420" rx="65" fill="url(#bottle)" stroke="#4ba987" stroke-width="9"/>
+ <path d="M78 115h105v250H78z" fill="#fff" opacity=".22"/>
+ <path d="M70 350q72 45 125 0v70q-55 45-125 0z" fill="#4ba987" opacity=".32"/>
+</g>
+<!-- apple -->
+<g transform="translate(820 420)">
+ <ellipse cx="80" cy="100" rx="86" ry="72" fill="#164e3b" opacity=".12"/>
+ <path d="M75 20c-65-35-100 25-75 85 20 52 57 92 88 88 34-5 55-45 65-90 15-70-28-105-78-83z" fill="url(#apple)"/>
+ <path d="M83 18c-8-48 25-68 58-72-4 37-26 65-58 72z" fill="#2f7d55"/>
+ <path d="M72 25c-8-32-35-44-58-35 13 25 31 38 58 35z" fill="#59a96f"/>
+ <ellipse cx="45" cy="76" rx="14" ry="25" fill="#fff" opacity=".3"/>
+</g>
+<!-- towel -->
+<path d="M520 565q110-85 245-5l-55 55q-105-55-185 5z" fill="#fff" stroke="#d7eee5" stroke-width="7"/>
+<path d="M565 560q75-40 145-2" fill="none" stroke="#79c9aa" stroke-width="7"/>
+<!-- decorative leaves -->
+<g fill="#2f8b61"><path d="M1010 310c90-80 150-35 150-35-45 75-105 85-150 35z"/><path d="M950 350c35-85 105-100 105-100 20 75-35 120-105 100z"/><path d="M340 500c-30-100 35-135 35-135 55 75 25 125-35 135z"/></g>
+<text x="90" y="180" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#18724f">LIVE HEALTHIER</text>
+<text x="88" y="250" font-family="Arial,sans-serif" font-size="72" font-weight="800" fill="#0f513b">Better</text>
+<text x="90" y="320" font-family="Arial,sans-serif" font-size="72" font-weight="800" fill="#10a36f">Every Day</text>
 </svg>
