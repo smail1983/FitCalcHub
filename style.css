@@ -215,3 +215,51 @@ footer p{font-size:.86rem}
 /* Footer credit */
 footer > p:last-child{font-size:0}
 footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font-size:.86rem;color:#9fb0bc}
+
+
+/* Functional mobile/tablet navigation and article filters */
+.article-category-row button{
+  border:0;
+  cursor:pointer;
+  font:inherit;
+}
+.article-category-row button:focus-visible{
+  outline:3px solid rgba(8,169,87,.35);
+  outline-offset:2px;
+}
+.article-category-row button.selected{
+  background:var(--green);
+  color:#fff;
+}
+.featured-article[hidden],
+.mini-article[hidden],
+.modern-article-card[hidden]{
+  display:none!important;
+}
+@media(max-width:950px){
+  .menu-toggle{display:flex}
+  .nav-links{
+    display:none;
+    position:absolute;
+    left:12px;
+    right:12px;
+    top:100%;
+    padding:10px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:16px;
+    box-shadow:0 16px 35px rgba(15,23,42,.12);
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+  }
+  .nav-links.is-open{display:flex}
+  .nav-links a{padding:12px 14px}
+  .nav-links a.active:after{display:none}
+}
+@media(min-width:951px){
+  .menu-toggle{display:none!important}
+}
+@media(max-width:650px){
+  .article-category-row button{white-space:nowrap}
+}
