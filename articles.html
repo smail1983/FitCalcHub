@@ -7,7 +7,7 @@
 <meta name="description" content="Practical FitCalcHub articles about calories, BMI, BMR, TDEE, body fat, nutrition, exercise and healthy living.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://fitcalchub.top/articles.html">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260925-2">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"FitCalcHub Health & Fitness Articles","url":"https://fitcalchub.top/articles.html","description":"Practical health, fitness and nutrition guides from FitCalcHub."}</script>
 </head>
 <body>
@@ -128,14 +128,24 @@ menu?.addEventListener('click',()=>{
   nav.classList.toggle('is-open',!open);
 });
 
-document.querySelectorAll('.article-category-row button').forEach(button=>{
-  button.addEventListener('click',()=>{
-    const category=button.dataset.category;
-    document.querySelectorAll('.article-category-row button').forEach(b=>b.classList.toggle('selected',b===button));
-    document.querySelectorAll('.featured-article,.mini-article,.modern-article-card').forEach(card=>{
-      card.hidden = category !== 'All Articles' && card.dataset.category !== category;
+const categoryButtons=document.querySelectorAll('.article-category-row button');
+const articleCards=document.querySelectorAll('.featured-article,.mini-article,.modern-article-card');
+categoryButtons.forEach(button=>{
+  button.setAttribute('aria-pressed',button.classList.contains('selected')?'true':'false');
+  button.addEventListener('click',(event)=>{
+    event.preventDefault();
+    event.stopPropagation();
+    const category=button.dataset.category || 'All Articles';
+    categoryButtons.forEach(b=>{
+      const active=b===button;
+      b.classList.toggle('selected',active);
+      b.setAttribute('aria-pressed',active?'true':'false');
     });
-    document.querySelector('.article-category-row')?.scrollIntoView({behavior:'smooth',block:'nearest'});
+    articleCards.forEach(card=>{
+      const matches=category==='All Articles' || card.dataset.category===category;
+      card.hidden=!matches;
+      card.setAttribute('aria-hidden',matches?'false':'true');
+    });
   });
 });
 </script>
