@@ -40,8 +40,12 @@
 </section>
 
 <section class="article-category-row" aria-label="Article categories">
-  <span class="selected">All Articles</span>
-  <span>Nutrition</span><span>Calories</span><span>Fitness</span><span>Weight Loss</span><span>Healthy Living</span>
+  <button type="button" class="selected" data-category="All Articles">All Articles</button>
+  <button type="button" data-category="Nutrition">Nutrition</button>
+  <button type="button" data-category="Calories">Calories</button>
+  <button type="button" data-category="Fitness">Fitness</button>
+  <button type="button" data-category="Weight Loss">Weight Loss</button>
+  <button type="button" data-category="Healthy Living">Healthy Living</button>
 </section>
 
 <section class="featured-article-layout">
@@ -118,7 +122,23 @@
 
 <script>
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');
-menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});
+menu?.addEventListener('click',()=>{
+  const open=menu.getAttribute('aria-expanded')==='true';
+  menu.setAttribute('aria-expanded',String(!open));
+  nav.classList.toggle('is-open',!open);
+});
+
+document.querySelectorAll('.article-category-row button').forEach(button=>{
+  button.addEventListener('click',()=>{
+    const category=button.dataset.category;
+    document.querySelectorAll('.article-category-row button').forEach(b=>b.classList.toggle('selected',b===button));
+    document.querySelectorAll('.featured-article,.mini-article,.modern-article-card').forEach(card=>{
+      const label=card.querySelector('.article-pill, .mini-article span, .modern-article-card span');
+      const match=category==='All Articles' || (label && label.textContent.trim()===category);
+      card.hidden=!match;
+    });
+  });
+});
 </script>
 </body>
 </html>
