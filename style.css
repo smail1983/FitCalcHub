@@ -266,14 +266,17 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
   .article-category-row button{white-space:nowrap}
 }
 
-/* Article image size - mobile and desktop */
+/* Article image sizing - all article images */
 .article-card img,
 .featured-article > img,
 .mini-article img,
-.modern-article-card > img {
-  width: 80%;
-  max-width: 700px;
+.modern-article-card > img,
+.articles-modern-hero .articles-hero-image img {
+  display: block;
+  width: 70%;
+  max-width: 600px;
   height: auto;
+  max-height: none;
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
@@ -283,21 +286,25 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
   .article-card img,
   .featured-article > img,
   .mini-article img,
-  .modern-article-card > img {
-    width: 75%;
-    max-width: 90%;
+  .modern-article-card > img,
+  .articles-modern-hero .articles-hero-image img {
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+    max-height: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
   }
 }
 
-
-
-/* Final article image sizing - reduce height and width */
+/* Images inside the article text */
 .article-content img,
 .article-body img,
 .article-page img.article-image {
   display: block;
-  width: auto;
-  max-width: 78%;
+  width: 75%;
+  max-width: 600px;
   height: auto;
   max-height: 560px;
   object-fit: contain;
@@ -306,35 +313,13 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
 }
 
 @media (max-width: 650px) {
-  .article-content img {
-    display: block;
-    width: 80%;
-    max-width: 600px;
+  .article-content img,
+  .article-body img,
+  .article-page img.article-image {
+    width: 75%;
+    max-width: 100%;
     height: auto;
+    max-height: 420px;
     margin: 20px auto;
-    border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .article-content img {
-        width: 75%;
-        max-width: 100%;
-        height: auto;
-    }
-}
-/* Also keep article-list images compact */
-.articles-modern-hero .articles-hero-image img {
-  width: 100%;
-  height: auto;
-  max-height: 430px;
-  object-fit: cover;
-}
-
-@media (max-width: 650px) {
-  .articles-modern-hero .articles-hero-image img {
-    width: 82%;
-    max-height: 300px;
-    margin: 0 auto;
-    object-fit: cover;
   }
 }
