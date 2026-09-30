@@ -289,3 +289,46 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
   }
 }
 
+
+
+/* Final article image sizing - reduce height and width */
+.article-content img,
+.article-body img,
+.article-page img.article-image {
+  display: block;
+  width: auto;
+  max-width: 78%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  margin: 22px auto;
+  border-radius: 12px;
+}
+
+@media (max-width: 650px) {
+  .article-content img,
+  .article-body img,
+  .article-page img.article-image {
+    width: auto;
+    max-width: 82%;
+    max-height: 460px;
+    margin: 18px auto;
+  }
+}
+
+/* Also keep article-list images compact */
+.articles-modern-hero .articles-hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  object-fit: cover;
+}
+
+@media (max-width: 650px) {
+  .articles-modern-hero .articles-hero-image img {
+    width: 82%;
+    max-height: 300px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+}
