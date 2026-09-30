@@ -306,16 +306,22 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
 }
 
 @media (max-width: 650px) {
-  .article-content img,
-  .article-body img,
-  .article-page img.article-image {
-    width: auto;
-    max-width: 82%;
-    max-height: 460px;
-    margin: 18px auto;
-  }
+  .article-content img {
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    .article-content img {
+        width: 75%;
+        max-width: 100%;
+        height: auto;
+    }
+}
 /* Also keep article-list images compact */
 .articles-modern-hero .articles-hero-image img {
   width: 100%;
