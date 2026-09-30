@@ -292,5 +292,19 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
     aspect-ratio:1.6;
     border-radius:16px;
     margin-top:10px;
+  }/* Article content images - smaller */
+.article-content img {
+  width: 75% !important;
+  max-width: 75% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 20px auto !important;
+}
+
+@media (max-width: 650px) {
+  .article-content img {
+    width: 75% !important;
+    max-width: 75% !important;
   }
+}
 }
