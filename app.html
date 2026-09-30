@@ -25,7 +25,7 @@ main{max-width:900px;margin:30px auto;padding:0 16px}
 <main>
 <section class="download" style="background:#10a37f;color:#fff;border-radius:16px;padding:24px;margin-bottom:24px;text-align:center">
 <h2>FitCalcHub Android App</h2><p>Download the FitCalcHub Android app.</p>
-<a class="btn" style="background:#fff;color:#087f5b;font-weight:bold" href="https://github.com/smail1983/FitCalcHub/releases/download/v1.2.0/app-release.apk">Download APK</a>
+<a class="btn" style="background:#fff;color:#087f5b;font-weight:bold" href="https://github.com/smail1983/FitCalcHub/releases/download/v1.2.0/app-release.apk">Download APK</a>\n<button class="btn share-btn" type="button" onclick="shareFitCalcHub()">↗ Share FitCalcHub</button>
 </section>
 <div class="grid">
 <a class="card" href="bmi-calculator.html"><h2>BMI Calculator</h2><p>Calculate your Body Mass Index.</p><span class="btn">Open Calculator</span></a>
@@ -36,5 +36,22 @@ main{max-width:900px;margin:30px auto;padding:0 16px}
 <a class="card" href="calorie-deficit-calculator.html"><h2>Calorie Deficit Calculator</h2><p>Estimate calorie targets for weight management.</p><span class="btn">Open Calculator</span></a>
 </div>
 </main>
+<script>
+async function shareFitCalcHub(){
+  const shareData={
+    title:'FitCalcHub',
+    text:'Check out FitCalcHub — free health & fitness calculators.',
+    url:'https://fitcalchub.top/app.html'
+  };
+  try{
+    if(navigator.share){
+      await navigator.share(shareData);
+    }else{
+      await navigator.clipboard.writeText(shareData.url);
+      alert('FitCalcHub link copied. You can now share it.');
+    }
+  }catch(e){}
+}
+</script>
 </body>
 </html>
