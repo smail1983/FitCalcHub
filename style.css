@@ -298,15 +298,15 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
   }
 }
 
-/* Images inside the article text */
+/* Images inside article text - controlled size */
 .article-content img,
 .article-body img,
 .article-page img.article-image {
   display: block;
-  width: 75%;
-  max-width: 600px;
+  width: auto;
+  max-width: 85%;
   height: auto;
-  max-height: 560px;
+  max-height: 450px;
   object-fit: contain;
   margin: 22px auto;
   border-radius: 12px;
@@ -316,10 +316,11 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
   .article-content img,
   .article-body img,
   .article-page img.article-image {
-    width: 75%;
-    max-width: 100%;
+    width: auto;
+    max-width: 88%;
     height: auto;
-    max-height: 420px;
-    margin: 20px auto;
+    max-height: 380px;
+    object-fit: contain;
+    margin: 18px auto;
   }
 }
