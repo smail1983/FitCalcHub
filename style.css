@@ -290,3 +290,32 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
     margin: 18px auto;
   }
 }
+
+
+/* Homepage hero image - mobile height fix */
+.mobile-inspired-hero .hero-photo{
+  width:100%;
+  max-width:560px;
+  height:360px;
+  margin:0 auto;
+  overflow:hidden;
+}
+.mobile-inspired-hero .hero-photo img{
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  object-fit:cover;
+  object-position:center;
+}
+@media(max-width:650px){
+  .mobile-inspired-hero .hero-photo{
+    width:100%;
+    max-width:100%;
+    height:220px;
+  }
+  .mobile-inspired-hero .hero-photo img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+  }
+}
