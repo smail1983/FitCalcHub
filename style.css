@@ -346,3 +346,197 @@ footer > p:last-child::after{content:"© 2026 FitCalcHub. Smail Albadraoui";font
     object-fit:cover;
   }
 }
+
+
+/* Final FitCalcHub clean white & green layout */
+body.home-page{background:#fff;color:#0b1726}
+
+.home-page .nav{
+  background:#fff;
+  border-bottom:1px solid #e7eee9;
+}
+.home-page .nav-inner{
+  max-width:1180px;
+  padding:12px 24px;
+}
+.home-page .brand{color:#0b1726}
+.home-page .nav-links a{color:#334155}
+.home-page .nav-links a:hover,
+.home-page .nav-links a.active{color:#08a957}
+.home-page .nav-links a.active:after{background:#08a957}
+.home-page .nav-cta{background:#08a957}
+
+.home-page .mobile-inspired-hero{
+  max-width:1180px;
+  min-height:0;
+  margin:0 auto;
+  padding:64px 24px 58px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(360px,520px);
+  gap:64px;
+  align-items:center;
+}
+.home-page .mobile-inspired-hero .hero-content{
+  order:1;
+  padding:0;
+}
+.home-page .mobile-inspired-hero .hero-photo{
+  order:2;
+  width:100%;
+  max-width:520px;
+  height:410px;
+  margin:0 auto;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid #dfe9e3;
+  box-shadow:0 18px 45px rgba(15,23,42,.10);
+}
+.home-page .mobile-inspired-hero .hero-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  object-fit:cover;
+  object-position:center;
+}
+.home-page .mobile-inspired-hero h1{
+  color:#0b1726;
+  font-size:clamp(2.7rem,5vw,4.5rem);
+  line-height:1.06;
+  letter-spacing:-2.6px;
+}
+.home-page .mobile-inspired-hero h1 span{color:#08a957}
+.home-page .section-kicker{color:#08a957}
+.home-page .hero-text{color:#64748b}
+.home-page .home-btn-primary{
+  background:#08a957;
+  color:#fff;
+}
+.home-page .home-btn-primary:hover{background:#078845}
+.home-page .home-btn-light{
+  background:#fff;
+  color:#172235;
+  border:1px solid #d8e4dd;
+}
+.home-page .home-btn-light:hover{
+  background:#f5fbf7;
+  border-color:#9ad7b8;
+}
+.home-page .home-benefits b{
+  border-color:#08a957;
+  color:#08a957;
+}
+
+.home-page .home-section{
+  max-width:1180px;
+  padding:58px 24px;
+}
+.home-page .calculators-preview{background:#fff}
+.home-page .home-section-heading h2{color:#0b1726}
+.home-page .home-section-heading>a,
+.home-page .home-tool-card strong,
+.home-page .home-article-card strong{color:#08a957}
+.home-page .home-card-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+.home-page .home-tool-card{
+  background:#fff;
+  border:1px solid #e1e9e4;
+  box-shadow:0 8px 24px rgba(15,23,42,.05);
+}
+.home-page .tool-icon{
+  background:#e8f8ef;
+  color:#078845;
+}
+.home-page .articles-preview{
+  max-width:none;
+  background:#f7fbf9;
+}
+.home-page .home-article-grid{
+  max-width:1180px;
+  margin:0 auto;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.home-page .home-article-card{
+  background:#fff;
+  border:1px solid #e1e9e4;
+}
+.home-page .home-article-card span{
+  background:#e8f8ef;
+  color:#078845;
+}
+.home-page .home-cta{
+  background:linear-gradient(135deg,#eefaf3,#e4f5ec);
+}
+.home-page footer{background:#07141d}
+
+@media(max-width:950px){
+  .home-page .mobile-inspired-hero{
+    grid-template-columns:1fr;
+    gap:34px;
+    padding:48px 24px;
+  }
+  .home-page .mobile-inspired-hero .hero-content{order:1}
+  .home-page .mobile-inspired-hero .hero-photo{
+    order:2;
+    max-width:600px;
+    height:330px;
+  }
+  .home-page .home-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-page .home-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:650px){
+  .home-page .nav-inner{padding:10px 16px}
+  .home-page .mobile-inspired-hero{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    padding:34px 16px 40px;
+  }
+  .home-page .mobile-inspired-hero .hero-content{
+    order:1;
+    width:100%;
+  }
+  .home-page .mobile-inspired-hero .hero-photo{
+    order:2;
+    width:100%;
+    max-width:100%;
+    height:220px;
+    border-radius:22px;
+  }
+  .home-page .mobile-inspired-hero .hero-photo img{
+    height:220px;
+  }
+  .home-page .mobile-inspired-hero h1{
+    font-size:2.45rem;
+    letter-spacing:-1.7px;
+  }
+  .home-page .hero-buttons{
+    width:100%;
+    flex-direction:column;
+    gap:10px;
+  }
+  .home-page .home-btn{width:100%}
+  .home-page .home-benefits{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:11px;
+  }
+  .home-page .home-section{padding:44px 16px}
+  .home-page .home-section-heading{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+  }
+  .home-page .home-card-grid,
+  .home-page .home-article-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .home-page .home-cta{
+    margin:42px 16px;
+    padding:30px 22px;
+  }
+}
