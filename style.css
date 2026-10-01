@@ -299,3 +299,15 @@ html, body {
     font-size: 1.35rem;
   }
 }
+
+
+/* Consistent footer credit across all pages */
+footer > p:last-child {
+  font-size: 0 !important;
+}
+
+footer > p:last-child::after {
+  content: "© 2026 FitCalcHub. Smail Albadraoui";
+  font-size: .86rem;
+  color: #9fb0bc;
+}
