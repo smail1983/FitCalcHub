@@ -43,5 +43,17 @@
 <a class="modern-article-card" data-category="Calories" href="maintenance-calories-guide.html"><div class="article-color-visual body-visual">TDEE</div><div><span>Calories</span><h3>Maintenance Calories Explained: A Simple Guide</h3><p>Understand maintenance calories, TDEE and how to use estimates responsibly.</p><strong>Read article →</strong></div></a>
 </div></section>
 <section class="modern-article-cta"><div><p class="section-kicker">FITCALCHUB CALCULATORS</p><h2>Turn information into useful numbers.</h2><p>Use our free calculators for BMI, TDEE, BMR, body fat and meal calories.</p></div><a class="home-btn home-btn-primary" href="calculators.html">Explore Calculators →</a></section>
-</main><footer><div class="footer-brand"><span>FitCalc<span>Hub</span></span></div><div class="footer-links"><a href="/">Home</a><a href="calculators.html">Calculators</a><a href="articles.html">Articles</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="medical-disclaimer.html">Disclaimer</a></div><p>© 2026 FitCalcHub. For informational purposes only.</p></footer>
+</main><footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="articles.html">Articles</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="medical-disclaimer.html">Medical Disclaimer</a>
+  </div>
+  <p>© 2026 FitCalcHub. For informational purposes only.</p>
+</footer>
 <script>const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});const categoryButtons=document.querySelectorAll('.article-category-row button');const articleCards=document.querySelectorAll('.featured-article,.mini-article,.modern-article-card');categoryButtons.forEach(button=>{button.setAttribute('aria-pressed',button.classList.contains('selected')?'true':'false');button.addEventListener('click',(event)=>{if(button.getAttribute('onclick')) return;event.preventDefault();event.stopPropagation();const category=button.dataset.category||'All Articles';categoryButtons.forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',active?'true':'false');});articleCards.forEach(card=>{const matches=category==='All Articles'||card.dataset.category===category;card.hidden=!matches;card.setAttribute('aria-hidden',matches?'false':'true');});});});</script></body></html>
