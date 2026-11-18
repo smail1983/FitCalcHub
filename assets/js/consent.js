@@ -17,8 +17,8 @@
     '/contact'
   ];
 
-  var currentPath = (window.location.pathname.replace(/\\/+$/, '') || '/')
-    .replace(/\\.html$/i, '')
+  var currentPath = (window.location.pathname.replace(/\/+$/, '') || '/')
+    .replace(/\.html$/i, '')
     .toLowerCase();
   var monetagAllowedOnThisPage = monetagExcludedPages.indexOf(currentPath) === -1;
 
