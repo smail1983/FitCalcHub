@@ -11,13 +11,15 @@
   var monetagUrl = 'https://nap5k.com/tag.min.js';
   var monetagZone = '11936432';
   var monetagExcludedPages = [
-    '/privacy.html',
-    '/terms.html',
-    '/medical-disclaimer.html',
-    '/contact.html'
+    '/privacy',
+    '/terms',
+    '/medical-disclaimer',
+    '/contact'
   ];
 
-  var currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  var currentPath = (window.location.pathname.replace(/\\/+$/, '') || '/')
+    .replace(/\\.html$/i, '')
+    .toLowerCase();
   var monetagAllowedOnThisPage = monetagExcludedPages.indexOf(currentPath) === -1;
 
   function hasAdvertisingConsent() {
