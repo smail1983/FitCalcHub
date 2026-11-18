@@ -55,7 +55,6 @@
   window.CookieConsent.run({
     mode: 'opt-in',
     autoShow: true,
-    hideFromBots: false,
     revision: 1,
     cookie: {
       name: 'fitcalchub_consent',
@@ -91,7 +90,7 @@
         en: {
           consentModal: {
             title: 'Your privacy choices',
-            description: 'FitCalcHub uses optional advertising. Choose whether to allow the advertising category. Monetag is loaded only after you accept and is not loaded on our Privacy, Terms, Medical Disclaimer or Contact pages.',
+            description: 'Choose whether to allow optional advertising on FitCalcHub. Monetag loads only after you accept and is disabled on our Privacy, Terms, Medical Disclaimer and Contact pages.',
             acceptAllBtn: 'Accept advertising',
             acceptNecessaryBtn: 'Reject optional advertising',
             showPreferencesBtn: 'Manage preferences',
