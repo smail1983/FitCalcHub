@@ -5,8 +5,8 @@
 <title>Health & Fitness Articles | FitCalcHub</title>
 <meta name="description" content="Practical FitCalcHub articles about calories, BMI, BMR, TDEE, body fat, nutrition, exercise and healthy living.">
 <meta name="robots" content="index, follow, max-image-preview:large"><link rel="canonical" href="https://fitcalchub.top/articles.html"><link rel="stylesheet" href="style.css?v=20260925-2">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"FitCalcHub Health & Fitness Articles","url":"https://fitcalchub.top/articles.html","description":"Practical health, fitness and nutrition guides from FitCalcHub."}</script>
-<script>(function(s){s.dataset.zone='11936432',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<link rel="stylesheet" href="/assets/vendor/cookieconsent.css">
 </head><body>
 <header class="nav"><div class="nav-inner"><a class="brand" href="/" aria-label="FitCalcHub home"><span class="brand-mark" aria-hidden="true"><span></span></span><span>FitCalc<span>Hub</span></span></a><nav class="nav-links" id="site-menu" aria-label="Main navigation"><a href="/">Home</a><a href="calculators.html">Calculators</a><a class="active" href="articles.html">Articles</a><a href="about.html">About</a></nav><button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><span></span><span></span><span></span></button></div></header>
 <main class="articles-modern">
@@ -53,7 +53,9 @@
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="medical-disclaimer.html">Medical Disclaimer</a>
-  </div>
+  <a href="#" data-cc="show-preferencesModal" aria-haspopup="dialog">Privacy settings</a></div>
   <p>© 2026 FitCalcHub. For informational purposes only.</p>
 </footer>
-<script>const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});const categoryButtons=document.querySelectorAll('.article-category-row button');const articleCards=document.querySelectorAll('.featured-article,.mini-article,.modern-article-card');categoryButtons.forEach(button=>{button.setAttribute('aria-pressed',button.classList.contains('selected')?'true':'false');button.addEventListener('click',(event)=>{if(button.getAttribute('onclick')) return;event.preventDefault();event.stopPropagation();const category=button.dataset.category||'All Articles';categoryButtons.forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',active?'true':'false');});articleCards.forEach(card=>{const matches=category==='All Articles'||card.dataset.category===category;card.hidden=!matches;card.setAttribute('aria-hidden',matches?'false':'true');});});});</script></body></html>
+<script>const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});const categoryButtons=document.querySelectorAll('.article-category-row button');const articleCards=document.querySelectorAll('.featured-article,.mini-article,.modern-article-card');categoryButtons.forEach(button=>{button.setAttribute('aria-pressed',button.classList.contains('selected')?'true':'false');button.addEventListener('click',(event)=>{if(button.getAttribute('onclick')) return;event.preventDefault();event.stopPropagation();const category=button.dataset.category||'All Articles';categoryButtons.forEach(b=>{const active=b===button;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',active?'true':'false');});articleCards.forEach(card=>{const matches=category==='All Articles'||card.dataset.category===category;card.hidden=!matches;card.setAttribute('aria-hidden',matches?'false':'true');});});});</script><script defer src="/assets/vendor/cookieconsent.umd.js"></script>
+<script defer src="/assets/js/consent.js"></script>
+</body></html>
