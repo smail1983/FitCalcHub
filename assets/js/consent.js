@@ -1,5 +1,6 @@
 /* FitCalcHub advertising consent integration.
- * Monetag is loaded only when the optional "advertising" category is accepted.
+ * Monetag is loaded only after the optional "advertising" category is accepted.
+ * The consent banner and preferences remain available on every visitor-facing page.
  */
 (function () {
   'use strict';
@@ -9,9 +10,24 @@
   var monetagLoaded = false;
   var monetagUrl = 'https://nap5k.com/tag.min.js';
   var monetagZone = '11936432';
+  var monetagExcludedPages = [
+    '/privacy.html',
+    '/terms.html',
+    '/medical-disclaimer.html',
+    '/contact.html'
+  ];
+
+  var currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  var monetagAllowedOnThisPage = monetagExcludedPages.indexOf(currentPath) === -1;
+
+  function hasAdvertisingConsent() {
+    return window.CookieConsent.acceptedCategory('advertising');
+  }
 
   function loadMonetagAfterConsent() {
-    if (monetagLoaded || !window.CookieConsent.acceptedCategory('advertising')) return;
+    if (!monetagAllowedOnThisPage || monetagLoaded || !hasAdvertisingConsent()) {
+      return;
+    }
 
     monetagLoaded = true;
     var script = document.createElement('script');
@@ -23,6 +39,17 @@
       script.remove();
     };
     document.head.appendChild(script);
+  }
+
+  function handleConsentChange() {
+    if (monetagLoaded && !hasAdvertisingConsent()) {
+      // A script already loaded on this document cannot be reliably "unexecuted".
+      // Reloading starts a clean document; the saved opt-out prevents it loading again.
+      window.location.reload();
+      return;
+    }
+
+    loadMonetagAfterConsent();
   }
 
   window.CookieConsent.run({
@@ -57,14 +84,14 @@
       }
     },
     onConsent: loadMonetagAfterConsent,
-    onChange: loadMonetagAfterConsent,
+    onChange: handleConsentChange,
     language: {
       default: 'en',
       translations: {
         en: {
           consentModal: {
             title: 'Your privacy choices',
-            description: 'FitCalcHub uses optional advertising. Choose whether to allow the advertising category. Monetag is loaded only after you accept.',
+            description: 'FitCalcHub uses optional advertising. Choose whether to allow the advertising category. Monetag is loaded only after you accept and is not loaded on our Privacy, Terms, Medical Disclaimer or Contact pages.',
             acceptAllBtn: 'Accept advertising',
             acceptNecessaryBtn: 'Reject optional advertising',
             showPreferencesBtn: 'Manage preferences',
@@ -84,7 +111,7 @@
               },
               {
                 title: 'Optional advertising',
-                description: 'If enabled, FitCalcHub loads the Monetag advertising script. Monetag and its advertising partners may use cookies or similar technologies and process technical information.',
+                description: 'If enabled, FitCalcHub loads the Monetag advertising script on eligible pages. It is not loaded on the Privacy, Terms, Medical Disclaimer or Contact pages. Monetag and its advertising partners may use cookies or similar technologies and process technical information.',
                 linkedCategory: 'advertising'
               },
               {
