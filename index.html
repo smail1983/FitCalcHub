@@ -14,9 +14,8 @@
 <meta property="og:url" content="https://fitcalchub.top/">
 <meta property="og:site_name" content="FitCalcHub">
 <link rel="stylesheet" href="style.css?v=20261001-2">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"FitCalcHub","url":"https://fitcalchub.top/","description":"Free health and fitness calculators and educational articles."},{"@type":"Organization","name":"FitCalcHub","url":"https://fitcalchub.top/"}]}</script>
 
-<script>(function(s){s.dataset.zone='11936432',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<link rel="stylesheet" href="/assets/vendor/cookieconsent.css">
 </head>
 <body class="home-page">
 <header class="nav">
@@ -103,7 +102,7 @@
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="medical-disclaimer.html">Medical Disclaimer</a>
-  </div>
+  <a href="#" data-cc="show-preferencesModal" aria-haspopup="dialog">Privacy settings</a></div>
   <p>© 2026 FitCalcHub. For informational purposes only.</p>
 </footer>
 
@@ -111,5 +110,7 @@
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');
 menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open);});
 </script>
+<script defer src="/assets/vendor/cookieconsent.umd.js"></script>
+<script defer src="/assets/js/consent.js"></script>
 </body>
 </html>

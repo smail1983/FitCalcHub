@@ -17,7 +17,8 @@ main{max-width:900px;margin:30px auto;padding:0 16px}
 .btn{display:inline-block;background:#10a37f;color:#fff;padding:10px 16px;border-radius:10px}
 </style>
 
-<script>(function(s){s.dataset.zone='11936432',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<link rel="stylesheet" href="/assets/vendor/cookieconsent.css">
 </head>
 <body>
 <header>
@@ -65,8 +66,10 @@ async function shareFitCalcHub(){
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="medical-disclaimer.html">Medical Disclaimer</a>
-  </div>
+  <a href="#" data-cc="show-preferencesModal" aria-haspopup="dialog">Privacy settings</a></div>
   <p>© 2026 FitCalcHub. For informational purposes only.</p>
 </footer>
+<script defer src="/assets/vendor/cookieconsent.umd.js"></script>
+<script defer src="/assets/js/consent.js"></script>
 </body>
 </html>
